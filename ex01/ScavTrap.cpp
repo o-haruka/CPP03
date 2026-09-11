@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other){
 ScavTrap& ScavTrap::operator=(const ScavTrap& other){
     std::cout << YELLOW << "ScavTrap " << RESET << "Copy assignment operator called.\n";
     if (this != &other) {
-        this->ClapTrap::operator=(other); // 親クラスの代入演算子を呼び出して基本ステータスをコピー
+        this->ClapTrap::operator=(other);
     }
     return *this;
 }
@@ -45,9 +45,6 @@ void ScavTrap::attack(const std::string& target) {
 }
 
 void ScavTrap::guardGate(){
-    // 死んでいたらモードに入れないようにするガード
-    // ex00でHP、energyがなくなったら何もできないと書いていたから。。if文必要か？？
-    // でもClapTrapの行動ではないからif文いらないかも。
     if (this->hitPoints_ > 0) {
         std::cout << YELLOW << "ScavTrap " << RESET << this->name_ << " is now in Gate keeper mode.\n";
     } else {

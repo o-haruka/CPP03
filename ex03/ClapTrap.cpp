@@ -9,25 +9,21 @@ ClapTrap::ClapTrap(const std::string& name): name_(name), hitPoints_(10), energy
     std::cout << AQUA << "ClapTrap " << RESET << "Default Parameterized constructor called for " << name_ << ".\n";
 }
 
-//? コピーコンストラクタと代入演算子の違いは？
-// どちらもコピーのような...
-//*新しく生み出すのがコピーコンストラクタ
 ClapTrap::ClapTrap(const ClapTrap& other){
     std::cout << AQUA << "ClapTrap " << RESET << "Copy constructor called\n";
     *this = other;
 }
 
-//*今あるものを上書きするのが代入演算子
 ClapTrap& ClapTrap::operator=(const ClapTrap& other){
     std::cout << AQUA << "ClapTrap " << RESET << "Copy assignment operator called\n";
 
-    if(this != &other){ //!if文つけよう！
+    if(this != &other){
         this->name_ = other.name_;
         this->hitPoints_ = other.hitPoints_;
         this->energyPoints_ = other.energyPoints_;
         this->attackDamage_ = other.attackDamage_;
     }
-    return *this; //!return忘れず！
+    return *this;
 }
 
 ClapTrap::~ClapTrap(){
@@ -42,6 +38,7 @@ ClapTrap::~ClapTrap(){
 // Hit points    | 体力 (HP)          | 初期値10。0になると死んで何もできなくなる。  
 // Energy points | 行動力 (MP/スタミナ) | 初期値10。攻撃や回復するたびに1ずつ減。  
 // Attack damage | 攻撃力             | 初期値0。攻撃したときに相手に与えるダメージ量。
+
 void ClapTrap::attack(const std::string& target){
     if(hitPoints_ > 0 && energyPoints_ > 0){
         --energyPoints_;
@@ -74,7 +71,6 @@ void ClapTrap::beRepaired(unsigned int amount){
     
 }
 
-//TODO： コメントアウト
 void ClapTrap::showStatus() const{
     std::cout << BLUE << "===status of [[" << name_ << "]]====\n" << RESET;
     std::cout << BLUE << "hitPoints_: " << hitPoints_ << RESET << "\n";

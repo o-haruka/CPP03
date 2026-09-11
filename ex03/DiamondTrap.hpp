@@ -17,9 +17,7 @@ class DiamondTrap: public ScavTrap, public FragTrap{
         DiamondTrap(const std::string& name);
 
         void whoAmI();
-        
-        //両方の親が attack() を持っているため、曖昧さを回避
-        //*attackには()をつけない
+
         using ScavTrap::attack;
 };
 

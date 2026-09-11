@@ -13,7 +13,7 @@
 #define RESET   "\033[0m"
 
 class ClapTrap{
-    protected: //子クラスかあらアクセスするにはprivate->protectedに変更。
+    protected:
         std::string name_;
         unsigned int hitPoints_;
         unsigned int energyPoints_;

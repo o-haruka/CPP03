@@ -19,10 +19,6 @@ DiamondTrap::DiamondTrap()
     std::cout << PINK << "DiamondTrap " << RESET << "Default constructor called.\n";
 }
 
-// *最大のトリック：仮想継承時のコンストラクタ呼び出し
-// 通常の継承であれば、親クラスのコンストラクタを呼べば、自動的にその親がおじいちゃんクラス（ClapTrap）を作ってくれます。
-// しかし「仮想継承（virtual）」を使った場合、大元のクラス（ClapTrap）を重複させずに1つだけ作るために、一番末っ子である DiamondTrap が、大元の ClapTrap のコンストラクタを直接呼び出して初期化する責任を持つというC++の特別なルールが発生します。
-// さらに課題文には、ClapTrap 側の名前は 渡された名前 + "_clap_name" にしなければならないという指定があります。
 DiamondTrap::DiamondTrap(const std::string& name)
     :   ClapTrap(name + "_clap_name"),
         ScavTrap(),

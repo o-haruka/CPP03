@@ -11,7 +11,7 @@ class ScavTrap: public ClapTrap{
         ScavTrap& operator=(const ScavTrap& other);
         ~ScavTrap();
 
-        void attack(const std::string& target); // *親のattack()を上書きするには返り値・関数名・引数を親と同じにする。
+        void attack(const std::string& target);
         void guardGate();
 };
 
