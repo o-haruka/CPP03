@@ -23,7 +23,7 @@ FragTrap::FragTrap(const FragTrap& other): ClapTrap(other){
 FragTrap& FragTrap::operator=(const FragTrap& other){
     std::cout << ORANGE << "FragTrap " << RESET << "Copy assignment operator called.\n";
     if (this != &other) {
-        ClapTrap::operator=(other); // 親クラスの代入演算子を呼び出して基本ステータスをコピー
+        ClapTrap::operator=(other);
     }
     return *this;
 }
