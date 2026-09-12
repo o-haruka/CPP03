@@ -17,7 +17,6 @@ ScavTrap::ScavTrap(const std::string& name): ClapTrap(name){
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other){
     std::cout << YELLOW << "ScavTrap " << RESET << "Copy constructor called.\n";
-    *this = other;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other){

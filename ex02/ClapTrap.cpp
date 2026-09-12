@@ -10,9 +10,8 @@ ClapTrap::ClapTrap(const std::string& name): name_(name), hitPoints_(10), energy
     std::cout << AQUA << "ClapTrap " << RESET << "Default Parameterized constructor called for " << name_ << ".\n";
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other){
+ClapTrap::ClapTrap(const ClapTrap& other): name_(other.name_), hitPoints_(other.hitPoints_), energyPoints_(other.energyPoints_), attackDamage_(other.attackDamage_){
     std::cout << AQUA << "ClapTrap " << RESET << "Copy constructor called\n";
-    *this = other;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other){

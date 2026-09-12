@@ -17,7 +17,6 @@ FragTrap::FragTrap(const std::string& name): ClapTrap(name){
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other){
     std::cout << ORANGE << "FragTrap " << RESET << "Copy constructor called.\n";
-    *this = other;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& other){
