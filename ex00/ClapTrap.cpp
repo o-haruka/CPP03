@@ -66,7 +66,12 @@ void ClapTrap::takeDamage(unsigned int amount){
 void ClapTrap::beRepaired(unsigned int amount){
     if(hitPoints_ > 0 && energyPoints_ > 0){
         --energyPoints_;
-        hitPoints_ += amount;
+
+        if(amount > UINT_MAX - hitPoints_)
+            hitPoints_ = UINT_MAX;
+        else 
+            hitPoints_ += amount;
+        
         std::cout << AQUA << "ClapTrap " << RESET << name_ << " repairs itself, regaining " << amount << " hit points! Current hit points: " << hitPoints_ << "\n";
     }
     else
