@@ -8,9 +8,10 @@ int main(){
     FragTrap chikawa("chikawa");
 
     //子クラスの初期化が適用されているか
-    chikawa.showStatus();
+	std::cout << "\n初期化時の期待値：100,100,30\n";
+	chikawa.showStatus();
 
-    std::cout << "\n========== [2] 攻撃attack()のテスト ==========" << AQUA << "[親: ClapTrap]" << RESET ORANGE << "[子: FragTrap]" << RESET << "\n";
+	std::cout << "\n========== [2] 攻撃attack()のテスト ==========" << AQUA << "[親: ClapTrap]" << RESET ORANGE << "[子: FragTrap]" << RESET << "\n";
     std::cout << "\n親クラスのattack messageが出る\n";
     chikawa.attack("hachiware");
     chikawa.showStatus();

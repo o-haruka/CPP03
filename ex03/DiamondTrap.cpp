@@ -4,7 +4,7 @@
 #include <string>
 
 // ---------------------------------------------------------
-// コンストラクタ
+// CONSTRUCTOR
 // ---------------------------------------------------------
 
 DiamondTrap::DiamondTrap()
@@ -57,6 +57,6 @@ DiamondTrap::~DiamondTrap(){
 // METHOD
 // ---------------------------------------------------------
 void DiamondTrap::whoAmI(){
-    std::cout << PINK << "This is DiamondTrap [" << name_ 
+    std::cout << PINK << "This is DiamondTrap [" << name_
               << "], and my ClapTrap name is [" << ClapTrap::name_ << "]!\n" << RESET;
 }

@@ -18,8 +18,9 @@ int main(){
     std::cout << "\n========== [3] 親クラスから引き継いだ機能のテスト ==========" << AQUA << "[親: ClapTrap]" << RESET YELLOW << "[子: ScavTrap]" << RESET << "\n";
     // ダメージや回復は親の機能（ClapTrapの関数）がそのまま使えるか確認
     chikawa.takeDamage(30);
-    chikawa.beRepaired(20);
-    chikawa.showStatus();
+	chikawa.showStatus();
+	chikawa.beRepaired(20);
+	chikawa.showStatus();
 
     std::cout << "\n========== [4] ScavTrap独自の機能のテスト ==========" << AQUA << "[親: ClapTrap]" << RESET YELLOW << "[子: ScavTrap]" << RESET << "\n";
     chikawa.guardGate();

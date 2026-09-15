@@ -2,7 +2,7 @@
 #include <iostream>
 #include <climits>
 
-ClapTrap::ClapTrap(): name_(""), hitPoints_(10), energyPoints_(10), attackDamage_(0){
+ClapTrap::ClapTrap(): name_("default"), hitPoints_(10), energyPoints_(10), attackDamage_(0){
     std::cout << AQUA << "ClapTrap " << RESET << "Default constructor called.\n";
 }
 
@@ -34,8 +34,8 @@ ClapTrap::~ClapTrap(){
 // METHOD
 // ---------------------------------------------------------
 // 変数名         | ゲームでの意味      | 詳細と課題のルール
-// Name          | キャラクター名        | コンストラクタで引数として設定される名前。  
-// Hit points    | 体力 (HP)          | 初期値10。0になると死んで何もできなくなる。  
+// Name          | キャラクター名        | コンストラクタで引数として設定される名前。
+// Hit points    | 体力 (HP)          | 初期値10。0になると死んで何もできなくなる。
 // Energy points | 行動力 (MP/スタミナ) | 初期値10。攻撃や回復するたびに1ずつ減。0になると何もできなくなる。
 // Attack damage | 攻撃力             | 初期値0。攻撃したときに相手に与えるダメージ量。
 
@@ -63,17 +63,17 @@ void ClapTrap::takeDamage(unsigned int amount){
 void ClapTrap::beRepaired(unsigned int amount){
     if(hitPoints_ > 0 && energyPoints_ > 0){
         --energyPoints_;
-        
+
         if(amount > UINT_MAX - hitPoints_)
             hitPoints_ = UINT_MAX;
-        else 
+        else
             hitPoints_ += amount;
 
         std::cout << AQUA << "ClapTrap " << RESET << name_ << " repairs itself, regaining " << amount << " hit points! Current hit points: " << hitPoints_ << "\n";
     }
     else
         std::cout << AQUA << "ClapTrap " << RESET << name_ << RED << " can't repair itself because it has no hit points or energy points left!" << RESET << "\n";
-    
+
 }
 
 void ClapTrap::showStatus() const{
